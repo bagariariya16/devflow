@@ -1,13 +1,19 @@
 const express = require("express");
+const { logger, response } = require("@devflow/common");
 
 const app = express();
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok", service: "auth-service" });
+  logger.info("Health check called on auth service");
+
+  response.sendSuccess(res, {
+    service: "auth-service",
+    status: "ok"
+  });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
-  console.log(`Auth service running on port ${PORT}`);
+  logger.info(`Auth service running on port ${PORT}`);
 });

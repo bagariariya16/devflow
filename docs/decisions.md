@@ -83,3 +83,13 @@ npm was chosen for simplicity and wider familiarity.
 
 **Future Plan:**
 - Introduce TypeScript incrementally, starting with shared libraries
+
+---
+
+## 8. Shared Library Design
+**Decision:** Centralize logging, errors, and response formatting in a shared library.
+
+**Reasoning:**
+- Enforces consistency across microservices
+- Simplifies debugging and monitoring
+- Reduces duplicated boilerplate
