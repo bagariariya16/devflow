@@ -18,7 +18,10 @@ All backend services follow a standard structure:
 - Shared dependencies via npm workspaces
 
 ### Auth Service
-Handles authentication, authorization, and token management.
+The Auth Service currently implements basic register and login flows
+using in-memory storage for learning and development purposes.
+Persistent storage and token-based authentication will be added later.
+
 
 ### Project Service
 Manages project metadata, repositories, and environment configurations.
