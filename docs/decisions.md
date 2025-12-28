@@ -54,3 +54,32 @@
 - Clear ownership
 - Independent scaling
 - Better fault isolation
+
+---
+
+## 6. Monorepo Tooling
+**Decision:** Use npm workspaces for dependency management.
+
+**Reasoning:**
+- Native Node.js support
+- Easy local linking of shared libraries
+- Simplified CI/CD dependency installation
+
+**Alternatives Considered:**
+- Yarn workspaces
+- pnpm
+
+npm was chosen for simplicity and wider familiarity.
+
+---
+
+## 7. Language Choice
+**Decision:** Use JavaScript instead of TypeScript initially.
+
+**Reasoning:**
+- Focus on architecture and DevOps concepts
+- Reduce initial cognitive load
+- Faster iteration during early development
+
+**Future Plan:**
+- Introduce TypeScript incrementally, starting with shared libraries
