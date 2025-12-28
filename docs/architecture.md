@@ -22,6 +22,13 @@ The Auth Service currently implements basic register and login flows
 using in-memory storage for learning and development purposes.
 Persistent storage and token-based authentication will be added later.
 
+The Auth Service follows a layered structure:
+- Routes define API endpoints
+- Controllers handle request logic
+- Data layer abstracts storage (temporary in-memory for now)
+
+This structure enables easy migration to database-backed storage.
+
 
 ### Project Service
 Manages project metadata, repositories, and environment configurations.

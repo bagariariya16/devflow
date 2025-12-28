@@ -93,3 +93,18 @@ npm was chosen for simplicity and wider familiarity.
 - Enforces consistency across microservices
 - Simplifies debugging and monitoring
 - Reduces duplicated boilerplate
+
+---
+
+## 9. Database Choice
+**Decision:** Use PostgreSQL as the primary database.
+
+**Reasoning:**
+- Strong relational data support
+- Data integrity and constraints
+- Industry-standard for backend systems
+- Excellent compatibility with cloud platforms like Azure
+
+**Future Plan:**
+- Run PostgreSQL locally using Docker
+- Use an ORM (Prisma) for database access
