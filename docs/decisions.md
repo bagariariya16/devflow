@@ -108,3 +108,15 @@ npm was chosen for simplicity and wider familiarity.
 **Future Plan:**
 - Run PostgreSQL locally using Docker
 - Use an ORM (Prisma) for database access
+
+---
+
+## API Base Paths
+**Decision:** Each service exposes APIs under a dedicated base path.
+
+**Example:**
+- Auth Service → `/auth/*`
+
+**Reasoning:**
+- Improves clarity and maintainability
+- Simplifies routing via API gateways and Kubernetes ingress

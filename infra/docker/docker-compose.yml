@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: devflow-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: devflow
+      POSTGRES_PASSWORD: devflow
+      POSTGRES_DB: devflow_auth
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
