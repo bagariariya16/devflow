@@ -2,6 +2,7 @@ const express = require("express");
 const { logger, response } = require("@devflow/common");
 const authRoutes = require("./routes/auth.routes");
 const authenticate = require("./middlewares/auth.middleware");
+const userRoutes = require("./routes/user.routes.js"); 
 
 require("dotenv").config();
 const app = express();
@@ -24,6 +25,7 @@ app.get("/me", authenticate, (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/user", userRoutes);
 
 const PORT = 3000;
 
