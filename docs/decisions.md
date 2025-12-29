@@ -120,3 +120,14 @@ npm was chosen for simplicity and wider familiarity.
 **Reasoning:**
 - Improves clarity and maintainability
 - Simplifies routing via API gateways and Kubernetes ingress
+
+---
+
+## Cloud & Cost Strategy
+This project is designed to be fully runnable using local infrastructure.
+
+- No paid cloud services are required
+- Docker, Kubernetes, and CI/CD simulate production environments
+- Architecture remains cloud-agnostic and migration-ready
+
+This ensures zero cost while retaining real-world design principles.
