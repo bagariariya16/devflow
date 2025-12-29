@@ -1,11 +1,12 @@
 const prisma = require("../db/prisma");
 const { logger, response } = require("@devflow/common");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 async function register(req, res) {
     const { email, password } = req.body;
 
-    //logger.info("Register request received");
+    logger.info("Register request received");
 
     if (!email || !password) {
         return response.sendError(res, "Email and password are required", 400);
@@ -48,9 +49,16 @@ async function login(req, res) {
         return response.sendError(res, "Invalid credentials", 401);
     }
 
+    const token = jwt.sign(
+        { userId: user.id, email: user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_EXPIRES_IN }
+    );
+
     return response.sendSuccess(res, {
         message: "Login successful",
-        userId: user.id
+        userId: user.id,
+        token
     });
 }
 
