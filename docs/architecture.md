@@ -28,6 +28,8 @@ The Auth Service follows a layered structure:
 - Data layer abstracts storage (temporary in-memory for now)
 
 This structure enables easy migration to database-backed storage.
+Auth Service uses PostgreSQL with Prisma ORM.
+Database schema is managed via Prisma migrations.
 
 
 ### Project Service
